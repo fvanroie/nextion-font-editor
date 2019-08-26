@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ZiLib
 {
-    internal static class CompressedByte
+    internal class CompressedByte
     {
         /* Helper class that encodes multiple pixels into a single compressed byte */
         /* For the 6 drawing modes, please refer to the v5 spec */
@@ -148,7 +148,7 @@ namespace ZiLib
             return colors.ToArray();
         }
 
-        // Counts how many times the pixel color at the start position is repeated, given a maximum count
+        // OBSOLETE !! slow - Counts how many times the pixel color at the start position is repeated, given a maximum count
         private static uint GetRepetition(byte[] bytes, uint start = 0, uint max = 255)
         {
             // Check array boudaries
@@ -186,7 +186,7 @@ namespace ZiLib
             return true;
         }
 
-        /* The logic that scans the 3bpp input pixel array and compresses it to a more compact size using the v5/6 font spec */
+        /* OBSOLETE !! slow logic that scans the 3bpp input pixel array and compresses it to a more compact size using the v5/6 font spec */
         public static byte[] Compress3bpp(byte[] bytes)
         {
             var length = bytes.Length;
