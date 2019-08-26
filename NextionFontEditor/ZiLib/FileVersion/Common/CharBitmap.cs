@@ -8,7 +8,7 @@ using System.Windows;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ZiLib
+namespace ZiLib.Obsolete
 {
     public class CharBitmap
     {
